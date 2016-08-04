@@ -29,6 +29,17 @@
     st = status
 
 
+    discard = reset --hard HEAD
+    scheckout = !sh -c 'git stash save && git checkout $1 && git stash pop' -
+    extinguish = !"git remote prune --dry-run origin | sed 's|.*origin/||' | tail -n +3 | xargs git branch --delete"
+    rollback = checkout --
+    unstage = reset HEAD
+    pushup = push --set-upstream origin HEAD
+    rpo = remote prune origin
+    force-pull = !sh -c 'git fetch && git reset --hard @{u}'
+    cammend = commit --amend --no-edit
+
+
     # PRETTY LOGS
 
     # compact log with branch names etc.
@@ -64,6 +75,7 @@
     quotepath = false
     # restore default pager behavior (needed because we manually set $LESS)
     pager = "less -FRX"
+    editor = vim
 
 [diff]
     # detect renamed files and show only actual differences between them
@@ -72,6 +84,7 @@
 [merge]
     # in case of merge conflict also show how common ancestor looked like
     conflictstyle = diff3
+    tool = meld
 
 [pager]
     # don't wrap lines in log and blame output (needed since git 2.1)
@@ -85,4 +98,8 @@
 [rebase]
     # automatically process "fixup!" commits when rebasing interactively
     autosquash = true
+
+[user]
+    name = Adam Wierzbicki
+    email = adam.wierzbicki@codilime.com
 

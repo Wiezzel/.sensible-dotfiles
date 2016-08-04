@@ -35,8 +35,14 @@ alias grep3='grep --color=always --line-number --context=3'
 
 # Some commands are so common that they deserve one-letter shortcuts :)
 alias g='git'
+alias gti='git'
 alias v='vim'
 alias L='less'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # Aliasing 'g' to 'git' wouldn't be useful without autocompletion.
 complete -o default -o nospace -F _git g
