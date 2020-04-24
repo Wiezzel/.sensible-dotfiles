@@ -101,5 +101,8 @@
 
 [user]
     name = Adam Wierzbicki
-    email = adam.wierzbicki@codilime.com
+    email = awierzbicki@golem.network
+    signingkey = F16423309543057BC5A813418C1FF3A79643449A
 
+[commit]
+    gpgsign = true
